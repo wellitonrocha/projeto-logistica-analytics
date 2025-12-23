@@ -26,6 +26,8 @@ Um pedido é considerado **entregue** quando possui data de entrega registrada (
 ### ⏱️ On Time (No Prazo)
 Um pedido é considerado **On Time** quando:
 
+`DataEntrega ≤ DataPrevista`
+
 Pedidos entregues após a data prevista são classificados como **Fora do Prazo**, mesmo que tenham sido entregues com sucesso.
 
 ---
@@ -47,7 +49,9 @@ OTIF é uma métrica composta que representa pedidos:
 - Entregues **no prazo**
 - **Sem ocorrência**
 
-Definição:
+Definição: 
+
+`OTIF = On Time × In Full`
 
 Essa métrica reflete o **nível real de serviço logístico**.
 
@@ -72,6 +76,8 @@ Importante:
 ### 💰 Receita Bruta
 Representa o valor total cobrado pelo frete:
 
+`Receita Bruta = SUM(ValorFrete)`
+
 ---
 
 ### 💸 Custo Total
@@ -85,12 +91,16 @@ Os custos são registrados na tabela **Fato_Custo** e possuem granularidade temp
 ---
 
 ### 📊 Resultado
-Resultado operacional da operação logística: (Receita Bruta - Custos)
+Resultado operacional da operação logística:
+
+`Resultado = Receita Bruta - Custo Total`
   
 ---
 
 ### 📈 Margem Operacional
-Indicador percentual de rentabilidade
+Indicador percentual de rentabilidade:
+
+`Margem Operacional = Resultado / Receita Bruta`
 
 ---
 
