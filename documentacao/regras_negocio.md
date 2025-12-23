@@ -49,7 +49,7 @@ OTIF é uma métrica composta que representa pedidos:
 - Entregues **no prazo**
 - **Sem ocorrência**
 
-Definição: 
+Definicao:
 
 `OTIF = On Time × In Full`
 
