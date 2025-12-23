@@ -56,8 +56,40 @@ O projeto segue uma arquitetura clássica de **Data Warehouse corporativo**, org
 Boas práticas adotadas incluem separação de responsabilidades por camada, integridade referencial, padronização de tipos e uso de views para consumo analítico.
 
 ---
+## 📂 4. Estrutura do Repositório
 
-## 🧱 4. Modelagem de Dados
+projeto-logistica-analytics/
+```text
+├── sql/
+│   ├── stg/        # Scripts de staging (dados brutos, sem regras de negócio)
+│   ├── ods/        # Dados tratados e normalizados (camada operacional)
+│   ├── dw/         # Modelagem dimensional (fatos e dimensões)
+│   └── views/      # Views de consumo para ferramentas analíticas
+│
+├── powerbi/
+│   └── projeto_logistica_analytics.pbix  # Dashboard final e modelo semântico
+│
+├── docs/
+│   ├── regras_negocio.md     # Definições de métricas, KPIs e regras de negócio
+│   └── dicionario_dados.md   # Dicionário de dados do Data Warehouse e views
+│
+├── assets/
+│   ├── backgrounds/          # Backgrounds das páginas (SVG – criados no Figma)
+│   ├── icons/                # Ícones utilizados nos visuais (PNG)
+│   └── images/               # Prints do dashboard e da modelagem dimensional
+│
+└── README.md
+```
+### 🧭 Como navegar pelo projeto
+
+- Comece pela pasta **sql/** para entender a lógica de ingestão, tratamento e modelagem dos dados.
+- Consulte **docs/** para compreender as regras de negócio, métricas e estrutura analítica.
+- Explore **powerbi/** para visualizar o resultado final do projeto.
+- Utilize **assets/** para referências visuais do design, modelagem e dashboards.
+
+Essa organização reforça a proposta de um projeto **robusto, escalável e orientado a boas práticas**, facilitando a leitura tanto para recrutadores quanto para times técnicos.
+
+## 🧱 5. Modelagem de Dados
 
 Foi adotada uma **modelagem híbrida**:
 - Relacional nas camadas STG e ODS
@@ -80,7 +112,7 @@ Essa abordagem respeita a granularidade real dos dados e evita distorções anal
 
 ---
 
-## 🧠 5. SQL — Pilar Central do Projeto
+## 🧠 6. SQL — Pilar Central do Projeto
 
 O **SQL é o núcleo técnico** deste projeto e foi utilizado em todas as etapas da solução.
 
@@ -100,7 +132,7 @@ Foram utilizados conceitos como:
 
 ---
 
-## 🧹 6. Qualidade e Tratamento de Dados
+## 🧹 7. Qualidade e Tratamento de Dados
 
 A qualidade dos dados foi tratada como requisito essencial.
 
@@ -115,7 +147,7 @@ Essas práticas asseguram que as análises reflitam corretamente a realidade ope
 
 ---
 
-## 📊 7. Power BI — Camada Analítica e Visual
+## 📊 8. Power BI — Camada Analítica e Visual
 
 O Power BI foi utilizado como camada final de consumo, conectado diretamente às views do Data Warehouse.
 
@@ -146,16 +178,55 @@ O Power BI foi utilizado como camada final de consumo, conectado diretamente às
 
 ---
 
-## 🛠️ 8. Tecnologias Utilizadas
+## 🎨 9. Design do Dashboard e Experiência Visual (Figma + Power BI)
+
+A camada visual deste projeto foi **planejada e construída de forma estratégica**, utilizando o **Figma como ferramenta de design** antes da implementação no Power BI. O objetivo foi garantir **clareza analítica, consistência visual e uma experiência próxima a dashboards corporativos reais**, indo além de uma simples entrega técnica.
+
+### 🧩 Processo de Design
+
+- Criação dos **backgrounds das páginas no Figma**, exportados em **SVG** para manter qualidade, escala e nitidez
+- Definição prévia de:
+  - Grid e alinhamento dos visuais
+  - Espaçamentos consistentes entre KPIs
+  - Hierarquia visual para leitura executiva
+- Padronização de:
+  - Paleta de cores
+  - Tipografia
+  - Ícones e elementos gráficos
+- Separação clara entre:
+  - Indicadores estratégicos (cards)
+  - Análises táticas (gráficos)
+  - Visões operacionais (matrizes e mapas)
+
+### 🔌 Integração com o Power BI
+
+- Backgrounds aplicados diretamente nas páginas do Power BI
+- Utilização de **ícones personalizados em PNG** nos indicadores
+- Design orientado à **leitura rápida e tomada de decisão**
+- Redução de ruído visual e excesso de informação
+
+### 🎯 Benefícios do Approach
+
+- Maior **usabilidade do dashboard**
+- Melhor **legibilidade dos KPIs**
+- Experiência visual consistente entre abas
+- Dashboard com aparência **profissional e corporativa**, não apenas técnica
+
+Esse cuidado com design reforça a proposta **end-to-end do projeto**, conectando **engenharia de dados, modelagem analítica e apresentação executiva** em uma única solução.
+
+---
+
+## 🛠️ 10. Tecnologias Utilizadas
 
 - SQL Server
 - SQL (DDL, DML, CTEs, Views)
 - Power BI
+- Figma
 - GitHub
 
 ---
 
-## 📚 9. Principais Aprendizados
+## 📚 11. Principais Aprendizados
 
 - Aplicação prática de SQL em um pipeline completo
 - Importância da modelagem correta para análises confiáveis
