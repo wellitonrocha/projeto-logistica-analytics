@@ -6,7 +6,7 @@ Projeto de **Analytics Logístico** desenvolvido com foco em **SQL avançado**, 
 
 ## 📌 1. Visão Geral do Projeto
 
-Operações logísticas geram grandes volumes de dados relacionados a **pedidos, custos de frota, prazos de entrega e ocorrências operacionais**. Sem um modelo de dados bem estruturado e regras claras de negócio, esses dados não se convertem em informação confiável para tomada de decisão.
+Operações logísticas geram grandes volumes de dados relacionados a **pedidos, custos de frota, prazos de entrega e ocorrências operacionais.** Sem um modelo de dados bem estruturado e regras claras de negócio, esses dados não se convertem em informação confiável para tomada de decisão.
 
 O **projeto-logistica-analytics** foi desenvolvido para simular um **cenário corporativo real**, no qual dados operacionais são tratados, organizados e disponibilizados para análises estratégicas.  
 
@@ -68,16 +68,15 @@ Foi adotada uma **modelagem híbrida**:
 - **Fato_Custo**: custos recorrentes da frota ao longo do tempo
 
 ### 📌 Dimensões
-- Tempo
-- Veículo
-- Filial
-- Ocorrência
-- Localidade (Cidade, UF, Região)
+- Dim_Cidade (Cidade, UF, Região)
+- Dim_Ocorrencia
+- Dim_Tempo
+- Dim_Veiculo
 
 Essa abordagem respeita a granularidade real dos dados e evita distorções analíticas.
 
 ### 📷 Diagrama da Modelagem
-> *Inserir imagem da modelagem dimensional*
+<img width="1020" height="519" alt="image" src="https://github.com/user-attachments/assets/636f2e49-820f-4031-9fde-e3bbd2beac11" />
 
 ---
 
@@ -135,7 +134,15 @@ O Power BI foi utilizado como camada final de consumo, conectado diretamente às
 - Volume de pedidos e ocorrências
 
 ### 📷 Prints dos Dashboards
-> *Inserir imagens das abas do Power BI*
+
+### Aba 1 - Home
+<img width="1239" height="696" alt="image" src="https://github.com/user-attachments/assets/8874cf75-a4c4-48de-921c-2d12bd9d8ee7" />
+
+### Aba 2 - Análise de Custos
+<img width="1237" height="695" alt="image" src="https://github.com/user-attachments/assets/23ed988b-ea33-4870-8ca8-43a24522d886" />
+
+### Aba 3 - Análise de Pedidos
+<img width="1236" height="696" alt="image" src="https://github.com/user-attachments/assets/a338d697-3a87-4d01-b332-e0bc8e424022" />
 
 ---
 
@@ -155,16 +162,6 @@ O Power BI foi utilizado como camada final de consumo, conectado diretamente às
 - Separação clara entre dados operacionais e analíticos
 - Impacto direto da qualidade dos dados no BI
 - Construção de métricas logísticas auditáveis
-
----
-
-## 🚀 10. Próximos Passos e Evoluções Futuras
-
-- Automatização do pipeline de dados
-- Implementação de cargas incrementais
-- Monitoramento de qualidade de dados
-- Integração com novas fontes
-- Evolução para análises preditivas
 
 ---
 
