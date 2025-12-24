@@ -39,23 +39,26 @@ O projeto tem como **pilar central o uso avançado de SQL**, aplicado de forma c
 
 ## 🏗️ 3. Arquitetura da Solução
 
-O projeto segue uma arquitetura clássica de **Data Warehouse corporativo**, organizada em camadas bem definidas para garantir clareza, governança e escalabilidade.
+<img width="1280" height="720" alt="Frame 10" src="https://github.com/user-attachments/assets/b82e111b-9d4f-48b5-a606-d0d92bab6464" />
+
+O projeto segue uma arquitetura clássica de **Data Warehouse corporativo**, estruturada em camadas bem definidas para garantir **clareza, governança, escalabilidade e separação de responsabilidades** ao longo do pipeline analítico.
 
 ### 🔄 Fluxo de Dados
-- Fonte de dados operacional  
-- **Staging (STG)** — dados brutos  
-- **ODS** — dados tratados e padronizados  
-- **Data Warehouse (DW)** — modelo analítico  
-- **Power BI** — camada de consumo e visualização  
 
-### 🗂️ Schemas Utilizados
-- **stg**: ingestão dos dados brutos
-- **ods**: dados tratados, tipados e validados
-- **dw**: fatos e dimensões para análise
+- **Fonte de Dados Operacional**
+- **STG (Staging)** — dados brutos, sem aplicação de regras de negócio
+- **ODS (Operational Data Store)** — dados tratados, padronizados e integrados
+- **DW (Data Warehouse)** — modelo dimensional orientado à análise
+- **Power BI** — camada de consumo analítico, visualização e suporte à decisão
 
-Boas práticas adotadas incluem separação de responsabilidades por camada, integridade referencial, padronização de tipos e uso de views para consumo analítico.
+### 🗂️ Esquemas Utilizados
 
----
+- **stg**: ingestão dos dados brutos, mantendo estrutura próxima à origem  
+- **ods**: dados tratados, tipados, validados e integrados  
+- **dw**: fatos e dimensões modelados para análises analíticas e estratégicas  
+
+As boas práticas adotadas incluem **separação clara de responsabilidades por camada**, **integridade referencial**, **padronização de tipos**, além do uso de **views SQL como camada semântica**, garantindo desacoplamento entre o modelo físico e as ferramentas de consumo analítico.
+
 ## 📂 4. Estrutura do Repositório
 
 projeto-logistica-analytics/
@@ -171,7 +174,7 @@ O Power BI foi utilizado como camada final de consumo, conectado diretamente às
 <img width="1239" height="696" alt="image" src="https://github.com/user-attachments/assets/8874cf75-a4c4-48de-921c-2d12bd9d8ee7" />
 
 ### Aba 2 - Análise de Custos
-<img width="1237" height="695" alt="image" src="https://github.com/user-attachments/assets/23ed988b-ea33-4870-8ca8-43a24522d886" />
+<img width="959" height="538" alt="image" src="https://github.com/user-attachments/assets/95adb1d3-43a5-4978-aa97-b07f71a73714" />
 
 ### Aba 3 - Análise de Pedidos
 <img width="1236" height="696" alt="image" src="https://github.com/user-attachments/assets/a338d697-3a87-4d01-b332-e0bc8e424022" />
